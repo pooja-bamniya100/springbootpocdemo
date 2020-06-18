@@ -1,0 +1,24 @@
+create table city (city_id bigint not null, created_date datetime, last_modified_date datetime, city_name varchar(255) not null, primary key (city_id)) engine=MyISAM;
+ create table country (country_id bigint not null, created_date datetime, last_modified_date datetime, country_name varchar(255) not null, primary key (country_id)) engine=MyISAM;
+ create table district (dist_id bigint not null, created_date datetime, last_modified_date datetime, dist_name varchar(255) not null, primary key (dist_id)) engine=MyISAM;
+ create table emp_address (emp_address_id bigint not null, created_date datetime, last_modified_date datetime, primary key (emp_address_id)) engine=MyISAM;
+ create table emp_education (emp_education_id bigint not null, created_date datetime, last_modified_date datetime, pass_year datetime not null, perc float not null, qualification varchar(255) not null, sc_name varchar(255) not null, university varchar(255) not null, emp_id bigint, primary key (emp_education_id)) engine=MyISAM;
+create table employee_contacts (employee_contacts_id bigint not null, created_date datetime, last_modified_date datetime, altername_contact bigint not null, contact bigint not null, email varchar(255), primary key (employee_contacts_id)) engine=MyISAM;
+ create table employee_detail (employee_detail_id bigint not null, created_date datetime, last_modified_date datetime, active bit not null, dob date not null, fathers_name varchar(255), firstname varchar(255) not null, lastname varchar(255) not null, primary key (employee_detail_id)) engine=MyISAM;
+ create table employee_master (emp_id bigint not null, created_date datetime, last_modified_date datetime, active bit not null, password varchar(255) not null, username varchar(255) not null, primary key (emp_id)) engine=MyISAM;
+create table employee_role (employee_role_id bigint not null, created_date datetime, last_modified_date datetime, role varchar(255), primary key (employee_role_id)) engine=MyISAM;
+create table employment_detail (employment_detail_id bigint not null, created_date datetime, last_modified_date datetime, experience integer not null, joining_date datetime not null, previous_company varchar(255) not null, salary bigint not null, primary key (employment_detail_id)) engine=MyISAM;
+create table hibernate_sequence (next_val bigint) engine=MyISAM
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+insert into hibernate_sequence values ( 1 );
+create table state (state_id bigint not null, created_date datetime, last_modified_date datetime, state_name varchar(255) not null, primary key (state_id)) engine=MyISAM;
+alter table emp_education add constraint FK3inewxwtrs72bcb8xi4xyp5rd foreign key (emp_id) references employee_master (emp_id);
